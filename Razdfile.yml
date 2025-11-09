@@ -1,0 +1,33 @@
+
+mise:
+  tools:
+    lua: latest
+tasks:
+  default:
+    desc: Set up project
+    cmds:
+    - task: install
+    - task: dev
+    - echo "Project setup completed!"
+  install:
+    desc: Install tools and dependencies
+    cmds:
+    - cmd: scoop install gcc make
+      platform: windows
+    - mise install
+  dev:
+    desc: Run the calculator
+    cmds:
+    - lua main.lua
+  run:
+    desc: Run the calculator (alias for dev)
+    cmds:
+    - lua main.lua
+  check:
+    desc: Check Lua syntax
+    cmds:
+    - lua -e "print('Lua ' .. _VERSION .. ' is working!')"
+  test:
+    desc: Run tests
+    cmds:
+    - echo "No tests configured yet"
