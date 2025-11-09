@@ -14,8 +14,13 @@ tasks:
   install:
     desc: Install tools and dependencies
     cmds:
-      - cmd: scoop install gcc make
+      - task: install-scoop
       - mise install
+  install-scoop:
+    desc: Install scoop packages (Windows only)
+    platforms: [windows]
+    cmds:
+      - scoop install gcc make
   dev:
     desc: Run the calculator
     cmds:
