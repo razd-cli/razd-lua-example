@@ -5,7 +5,7 @@ dependencies:
 
   ensure:
     - "task@latest"
-    - "lua@latest"
+    - "lua@5.4"
 
 tasks:
   default:
