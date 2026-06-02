@@ -1,8 +1,11 @@
 version: "1"
-mise:
-  tools:
-    task: latest
-    lua: latest
+
+dependencies:
+  using: "mise"
+
+  ensure:
+    - "task@latest"
+    - "lua@latest"
 
 tasks:
   default:
