@@ -4,8 +4,7 @@ dependencies:
   using: "mise"
 
   ensure:
-    - "task@latest"
-    - "lua@5.4"
+    - "luau@latest"
 
 tasks:
   default:
@@ -17,25 +16,19 @@ tasks:
   install:
     desc: Install tools and dependencies
     cmds:
-      - task: install-scoop
       - mise install
-  install-scoop:
-    desc: Install scoop packages (Windows only)
-    platforms: [windows]
-    cmds:
-      - scoop install gcc make
   dev:
-    desc: Run the calculator
+    desc: Run the quote generator
     cmds:
-      - lua main.lua
+      - luau main.luau
   check:
-    desc: Check Lua syntax
+    desc: Type-check the Luau source
     cmds:
-      - lua -e "print('Lua ' .. _VERSION .. ' is working!')"
+      - luau-analyze main.luau
   run:
-    desc: Run the calculator (alias for dev)
+    desc: Run the quote generator (alias for dev)
     cmds:
-      - lua main.lua
+      - luau main.luau
   test:
     desc: Run tests
     cmds:

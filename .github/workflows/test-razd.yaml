@@ -18,3 +18,4 @@ jobs:
           razd --version
           razd install --yes
           razd dev
+          razd check

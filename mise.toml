@@ -1,3 +1,2 @@
 [tools]
-task = "latest"
-lua = "latest"
+luau = "latest"
